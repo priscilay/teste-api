@@ -10,12 +10,12 @@ public class GetStep {
 
 	private  Response response;
 
-	@Quando("^envio a requisição$")
-	public void envio_a_requisição() throws Throwable {
+	@Quando("^envio a requisicao$")
+	public void envio_a_requisicao() throws Throwable {
 		response = given().when().get("https://jsonplaceholder.typicode.com/todos/1");
 	}
 
-	@Então("^Valido o retorno$")
+	@Entao("^Valido o retorno$")
 	public void valido_o_retorno() throws Throwable {
 		String userId = response.then().extract().path("userId").toString();
 		String id = response.then().extract().path("id").toString();
